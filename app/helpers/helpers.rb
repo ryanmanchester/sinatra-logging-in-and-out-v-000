@@ -2,7 +2,7 @@ require 'pry'
 class Helpers
 
   def self.current_user(session)
-    @user = User.find_by("id")
+    @user = User.find_by(id: session[:user_id])
 
     if @user.id == session[:user_id]
        @user
@@ -11,6 +11,6 @@ class Helpers
 
    def self.is_logged_in?(session)
      #binding.pry
-      !!(@user.id == session[:user_id])
+      !!(session[:user_id])
    end
 end
