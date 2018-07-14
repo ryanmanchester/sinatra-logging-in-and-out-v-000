@@ -10,8 +10,6 @@ class Helpers
    end
 
    def self.is_logged_in?(session)
-     #binding.pry
-     #@user = User.find_by("id")
-     !!(@user.id == session[:user_id])
+      !!(@user.id == session[:user_id])
    end
 end
